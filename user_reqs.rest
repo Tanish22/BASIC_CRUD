@@ -1,0 +1,8 @@
+POST http://localhost:2800/api/signUp HTTP/1.1
+content-Type: application/json
+
+{
+    "name": "Tanish Gupte",
+    "email": "tanish@gupte.com",
+    "password": "tanishgupte"
+}
