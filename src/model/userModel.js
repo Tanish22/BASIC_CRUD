@@ -31,8 +31,8 @@ userSchema.statics.buildUser = async function(name, email, password) {
         throw new Error("Unable to login");
     }
 
-    await User.save();
-    return User;
+    await user.save();
+    return user;
 }
 
 const User = mongoose.model('User', userSchema);

@@ -37,7 +37,9 @@ router.post('/api/signUp',
             }
             
             const user = User.buildUser({ name, email, password });
+
             console.log(user);
+            res.sendStatus(201).send(user);
         }
         
         catch(error) {
