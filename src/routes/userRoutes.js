@@ -33,10 +33,15 @@ router.post('/api/signUp',
             const userExists = await User.findOne({ email });    
             
             if(userExists){
+                console.log('Email in Use !!')
                 return res.sendStatus(400).send("Email Already in use !!");
             }
             
             const user = User.buildUser({ name, email, password });
+
+            await user.save();
+
+            const token = await generateJWTToken();
 
             console.log(user);
             res.sendStatus(201).send(user);
